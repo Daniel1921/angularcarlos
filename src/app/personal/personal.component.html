@@ -41,7 +41,7 @@
                         <td>{{personal.email}}</td>
                         <td>{{personal.nombre}}</td>
                         <td>{{personal.fecha_nacimiento}}</td>
-                        <td><button [routerLink]="['/actualizar', personal._id]" type="button" class="btn btn-info">Actualizar</button></td>
+                        <td><button [routerLink]="['/nuevo', personal._id]" type="button" class="btn btn-info">Actualizar</button></td>
                         <td><button (click)="borrarPersonal(personal)" type="button" class="btn btn-danger">eliminar</button></td>
                     </tr>
 

@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h1> crear un personal Nuevo </h1>
+
+            <form #f="ngForm" ngNativeValidate (ngSubmit)="guardarPersonal(f)">
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Cedula</label>
+                    <input [(ngModel)]="personal.cedula" type="text" name="cedula" name="cedula" class="form-control" id="exampleFormControlInput1" placeholder="ingrese la cedula" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">area</label>
+                    <input [(ngModel)]="personal.area" type="text" name="area" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese el area" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">cargo</label>
+                    <input [(ngModel)]="personal.cargo" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese el cargo" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">email</label>
+                    <input [(ngModel)]="personal.email" type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese el email" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">nombre</label>
+                    <input [(ngModel)]="personal.nombre" type="text" name="nombre" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese el nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">fecha nacimiento</label>
+                    <input [(ngModel)]="personal.fecha_nacimiento" type="date" name="fecha_nacimiento" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese la fecha de nacimiento" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success">Guardar</button>
+                </div>
+
+            </form>
+
+
+        </div>
+    </div>
+</div>

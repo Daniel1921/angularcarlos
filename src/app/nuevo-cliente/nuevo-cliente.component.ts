@@ -21,13 +21,19 @@ export class NuevoClienteComponent implements OnInit {
       let id = params['id'];
       if ( id !== 'nuevo') {
         console.log(id);
-     //   this.cargarPersonal(id);
+       this.cargarCliente(id);
       }
       });
   }
 
   ngOnInit() {
+
   }
+  cargarCliente(id) {
+
+    this._clienteService.cargarUnCliente( id ).subscribe(resp => this.cliente = resp);
+    }
+
 
   guardarCliente(f: NgForm) {
 

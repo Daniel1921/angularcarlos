@@ -21,6 +21,18 @@ export class ClienteService {
     });
 
   }
+  cargarUnCliente(id: string ) {
+
+    console.log(id, 'id este es');
+    // tslint:disable-next-line:prefer-const
+    let url = 'http://localhost:3000/cliente/uno/' + id;
+    return this.http.get(url)
+    .map((resp: any) => {
+      console.log(resp.cliente, 'trae esta info');
+      return resp.cliente;
+    });
+
+  }
 
   // ***************************
 guardarCliente( cliente: Cliente) {
@@ -29,10 +41,10 @@ guardarCliente( cliente: Cliente) {
   let url = 'http://localhost:3000/clientes';
 
   if (cliente._id) {
-/*  url += '/' + personal._id ;
- return this.http.put(url, personal).map((resp: any) => {
-   return resp.personal;
- }); */
+ url += '/' + cliente._id ;
+ return this.http.put(url, cliente).map((resp: any) => {
+   return resp.cliente;
+ });
   } else {
 return this.http.post(url, cliente).map((resp: any) => {
   return resp.cliente;

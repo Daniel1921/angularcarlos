@@ -1,0 +1,75 @@
+<br>
+<br>
+<div class="card">
+    <div class="card-header">
+        <h5> gestión de clientes </h5>
+
+    </div>
+    <div class="card-body example-container mat-elevation-z8">
+        <mat-form-field>
+            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Buscar">
+        </mat-form-field>
+
+
+        <mat-table #table [dataSource]="dataSource" matSort>
+
+            <ng-container matColumnDef="cedula">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> cedula </mat-header-cell>
+                <mat-cell *matCellDef="let clienteG"> {{clienteG.cedula}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="edad">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> edad </mat-header-cell>
+                <mat-cell *matCellDef="let clienteG"> {{clienteG.edad}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="sexo">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> sexo </mat-header-cell>
+                <mat-cell *matCellDef="let clienteG"> {{clienteG.sexo}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="nombre_completo">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> nombre completo. </mat-header-cell>
+                <mat-cell *matCellDef="let clienteG"> {{clienteG.nombre_completo}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="precio">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> precio. </mat-header-cell>
+                <mat-cell *matCellDef="let clienteG"> {{clienteG.precio}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="fecha_caducidad">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> fecha de caducidad. </mat-header-cell>
+                <mat-cell *matCellDef="let clienteG"> {{clienteG.fecha_caducidad}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="acciones">
+                <mat-header-cell *matHeaderCellDef> acciones </mat-header-cell>
+                <mat-cell *matCellDef="let clienteG">
+                    <button [routerLink]="['/nuevocliente', clienteG._id]" type="button" class="btn btn-info">Actualizar</button>
+
+                </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="acciones2">
+                <mat-header-cell *matHeaderCellDef> acciones2 </mat-header-cell>
+                <mat-cell *matCellDef="let clienteG">
+                    <button (click)="borrarPersonal(clienteG)" type="button" class="btn btn-danger">eliminar</button>
+
+                </mat-cell>
+            </ng-container>
+
+
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]">
+
+        </mat-paginator>
+        <br>
+        <button [routerLink]="['/nuevocliente','nuevo']" type="button" class="btn waves-effect waves-light btn-rounded btn-primary">
+          <i class="fa fa-plus"></i> 
+          registrar un nuevo cliente
+        </button>
+    </div>
+</div>

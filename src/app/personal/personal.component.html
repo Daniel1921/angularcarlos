@@ -1,53 +1,52 @@
-<h1>Gestion del personal (crud)</h1>
 <br>
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <!-- [routerLink]="['/personal','nuevo']"-->
-            <button [routerLink]="['/nuevo','nuevo']" type="button" class="btn waves-effect waves-light btn-rounded btn-primary">
-              <i class="fa fa-plus"></i> 
-              Crear Personal
-            </button>
-        </div>
-        <!--      <div class="col-md-6">
-            <input #input (keyup)="buscarPersonal( input.value )" type="text" class="form-control" placeholder="Buscar Personal...">
+<div class="card">
+    <div class="card-header">
 
-        </div> -->
-
+        <h5>Gestion del personal</h5>
     </div>
-    <div class="row">
-        <div class="col-md-12">
-            <table class="table table-dark">
-                <thead>
-                    <tr>
-
-                        <th scope="col">cedula</th>
-                        <th scope="col">area</th>
-                        <th scope="col">cargo</th>
-                        <th scope="col">email</th>
-                        <th scope="col">nombre</th>
-                        <th scope="col">fecha Nacimiento</th>
-                        <th scope="col">Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                    <tr *ngFor="let personal of personales">
+    <div class="card-body">
 
 
-                        <td>{{personal.cedula}}</td>
-                        <td>{{personal.area}}</td>
-                        <td>{{personal.cargo}}</td>
-                        <td>{{personal.email}}</td>
-                        <td>{{personal.nombre}}</td>
-                        <td>{{personal.fecha_nacimiento}}</td>
-                        <td><button [routerLink]="['/nuevo', personal._id]" type="button" class="btn btn-info">Actualizar</button></td>
-                        <td><button (click)="borrarPersonal(personal)" type="button" class="btn btn-danger">eliminar</button></td>
-                    </tr>
 
-                </tbody>
-            </table>
-        </div>
+        <!-- [routerLink]="['/personal','nuevo']"-->
+        <button [routerLink]="['/nuevo','nuevo']" type="button" class="btn waves-effect waves-light btn-rounded btn-primary">
+                  <i class="fa fa-plus"></i> 
+                  Crear Personal
+                </button>
+
+        <br>
+
+
+
+        <table class="table table-dark">
+            <thead>
+                <tr>
+
+                    <th scope="col">cedula</th>
+                    <th scope="col">area</th>
+                    <th scope="col">cargo</th>
+                    <th scope="col">email</th>
+                    <th scope="col">nombre</th>
+                    <th scope="col">fecha Nacimiento</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr *ngFor="let personal of personales">
+
+
+                    <td>{{personal.cedula}}</td>
+                    <td>{{personal.area}}</td>
+                    <td>{{personal.cargo}}</td>
+                    <td>{{personal.email}}</td>
+                    <td>{{personal.nombre}}</td>
+                    <td>{{personal.fecha_nacimiento}}</td>
+                    <td><button [routerLink]="['/nuevo', personal._id]" type="button" class="btn btn-info">Actualizar</button></td>
+                    <td><button (click)="borrarPersonal(personal)" type="button" class="btn btn-danger">eliminar</button></td>
+                </tr>
+
+            </tbody>
+        </table>
     </div>
-
 </div>

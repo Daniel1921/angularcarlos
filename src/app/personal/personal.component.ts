@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Personal } from '../models/personal.model';
 import { PersonalService } from '../services/personal.service';
-
+import swal from 'sweetalert2';
 @Component({
   selector: 'app-personal',
   templateUrl: './personal.component.html',
@@ -40,7 +40,28 @@ buscarPersonal( termino: string ) {
 
 
 borrarPersonal(personal: Personal) {
-  this._personalService.borrarPersonal(personal._id).subscribe (() =>  this.cargarPersonal());
-}
+  swal({
+    title: '¿Estas seguro de borrar al usuario?',
+    text: 'el usuario a borrar es ' + personal.nombre,
+    type: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Si, estoy seguro'
+  }).then((result) => {
+    console.log(result);
+    if (result.value) {
+      this._personalService.borrarPersonal(personal._id).subscribe (() =>  this.cargarPersonal());
+        swal(
+          'Eliminado',
+          'El usuario ha sido eliminado.',
+          'success'
+        );
+      }
+      });
+
+    }
+
 
 }
+

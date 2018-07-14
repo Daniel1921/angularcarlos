@@ -1,0 +1,45 @@
+<br>
+<div class="card">
+    <div class="card-header">
+        <h5> crear un cliente Nuevo </h5>
+    </div>
+    <div class="card-body">
+
+
+        <form #f="ngForm" ngNativeValidate (ngSubmit)="guardarCliente(f)">
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Cedula</label>
+                <input [(ngModel)]="cliente.cedula" name="cedula" type="text" class="form-control" id="exampleFormControlInput1" placeholder="ingrese la cedula" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">edad</label>
+                <input [(ngModel)]="cliente.edad" name="edad" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese la edad" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect2">Sexo</label>
+                <select [(ngModel)]="cliente.sexo" name="sexo" class="form-control" id="exampleFormControlSelect2">
+                  <option></option>
+                  <option>Hombre</option>
+                  <option>Mujer</option>    
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Nombre Completo</label>
+                <input [(ngModel)]="cliente.nombre_completo" name="nombre_completo" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese el nombre completo" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">precio</label>
+                <input [(ngModel)]="cliente.precio" name="precio" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese el precio" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">fecha de caducidad</label>
+                <input [(ngModel)]="cliente.fecha_caducidad" name="fecha_caducidad" type="date" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese la fecha de abono" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-success">Guardar</button>
+            </div>
+
+        </form>
+
+    </div>
+</div>

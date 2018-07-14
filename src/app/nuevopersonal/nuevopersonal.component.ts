@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { PersonalService } from '../services/personal.service';
 import { Personal } from '../models/personal.model';
 import { ActivatedRoute, Router } from '@angular/router';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-nuevopersonal',
@@ -41,6 +42,12 @@ export class NuevopersonalComponent implements OnInit {
 
   this._personalService.guardarPersonal(this.personal).subscribe(personal => {
     console.log(personal);
+    swal(
+      'Se ha guardado el nuevo empleado',
+      personal.nombre,
+      'success'
+    );
+  this.router.navigate(['/personal']);
   });
 
   }

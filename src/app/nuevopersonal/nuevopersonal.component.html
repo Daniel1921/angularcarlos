@@ -1,40 +1,41 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <h1> crear un personal Nuevo </h1>
-
-            <form #f="ngForm" ngNativeValidate (ngSubmit)="guardarPersonal(f)">
-                <div class="form-group">
-                    <label for="exampleFormControlInput1">Cedula</label>
-                    <input [(ngModel)]="personal.cedula" name="cedula" type="text" class="form-control" id="exampleFormControlInput1" placeholder="ingrese la cedula" required>
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlInput1">area</label>
-                    <input [(ngModel)]="personal.area" name="area" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese el area" required>
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlInput1">cargo</label>
-                    <input [(ngModel)]="personal.cargo" name="cargo" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese el cargo" required>
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlInput1">email</label>
-                    <input [(ngModel)]="personal.email" name="email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese el email" required>
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlInput1">nombre</label>
-                    <input [(ngModel)]="personal.nombre" name="nombre" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese el nombre" required>
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlInput1">fecha nacimiento</label>
-                    <input [(ngModel)]="personal.fecha_nacimiento" name="fecha_nacimiento" type="date" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese la fecha de nacimiento" required>
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-success">Guardar</button>
-                </div>
-
-            </form>
+<br>
+<div class="card">
+    <div class="card-header">
+        <h5> crear un personal Nuevo </h5>
+    </div>
+    <div class="card-body">
 
 
-        </div>
+        <form #f="ngForm" ngNativeValidate (ngSubmit)="guardarPersonal(f)">
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Cedula</label>
+                <input [(ngModel)]="personal.cedula" name="cedula" type="text" class="form-control" id="exampleFormControlInput1" placeholder="ingrese la cedula" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">area</label>
+                <input [(ngModel)]="personal.area" name="area" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese el area" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">cargo</label>
+                <input [(ngModel)]="personal.cargo" name="cargo" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese el cargo" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">email</label>
+                <input [(ngModel)]="personal.email" name="email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese el email" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">nombre</label>
+                <input [(ngModel)]="personal.nombre" name="nombre" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese el nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">fecha nacimiento</label>
+                <input [(ngModel)]="personal.fecha_nacimiento" name="fecha_nacimiento" type="date" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese la fecha de nacimiento" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-success">Guardar</button>
+            </div>
+
+        </form>
+
     </div>
 </div>
